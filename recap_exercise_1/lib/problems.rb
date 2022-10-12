@@ -7,12 +7,12 @@
 # all_vowel_pairs(["goat", "action", "tear", "impromptu", "tired", "europe"])   # => ["action europe", "tear impromptu"]
 def all_vowel_pairs(words)
     pairs = []
-    (1...words.length).each do |outer_i|
-        (0...outer_i).each do |inner_i|
+    (0...(words.length-1)).each do |outer_i|
+        ((outer_i+1)...words.length).each do |inner_i|
             vowels="aeiou"
             words[outer_i].each_char {|char| vowels.delete!(char) if vowels.include?(char)}
             words[inner_i].each_char {|char| vowels.delete!(char) if vowels.include?(char)}
-            pairs.push("#{words[inner_i]} #{words[outer_i]}") if vowels == ""
+            pairs.push("#{words[outer_i]} #{words[inner_i]}") if vowels == ""
         end
     end
     return pairs

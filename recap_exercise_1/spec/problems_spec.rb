@@ -2,8 +2,8 @@ require "problems"
 
 describe "all_vowel_pairs" do
     it "should return all pairs of words that contain every vowel" do
-        expect(all_vowel_pairs(["goat", "action", "tear", "impromptu", "tired", "europe"])).to match_array ["action europe", "tear impromptu"]
-        expect(all_vowel_pairs(["upper", "goalie", "unstoppable", "cranky", "terrible"])).to match_array ["upper goalie", "goalie unstoppable", "unstoppable terrible"]
+        expect(all_vowel_pairs(["goat", "action", "tear", "impromptu", "tired", "europe"])).to eq(["action europe", "tear impromptu"])
+        expect(all_vowel_pairs(["upper", "goalie", "unstoppable", "cranky", "terrible"])).to eq(["upper goalie", "goalie unstoppable", "unstoppable terrible"])
         expect(all_vowel_pairs(["city", "stair", "dog"])).to eq([])
     end
 end
